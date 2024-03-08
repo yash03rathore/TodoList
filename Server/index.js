@@ -4,7 +4,13 @@ const cors = require('cors')
 const TodoModel = require('./Models/Todo')
 
 const app = express()
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://todo-list-frontend-mocha.vercel.app/"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+))
 app.use(express.json())
 
 mongoose.connect('mongodb+srv://rathoreyash2003:batkagrip%40123@atlascluster.d0x5pb7.mongodb.net/test')
