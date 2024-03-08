@@ -4,7 +4,7 @@ import axios from 'axios'
 function Create(){
     const [task, setTask] = useState()
     const handleAdd = () =>{
-            axios.post('todo-list-navy-nine.vercel.app/add', {task:task})
+            axios.post('http://todo-list-navy-nine.vercel.app/add', {task:task})
             .then(result => {location.reload()})
             .catch(err => console.log(err))
     }
