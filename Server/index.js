@@ -14,7 +14,9 @@ app.use(cors(
 app.use(express.json())
 
 mongoose.connect('mongodb+srv://rathoreyash2003:batkagrip%40123@atlascluster.d0x5pb7.mongodb.net/test')
-
+app.get('/', (req,res) =>{
+    return "Hello World"
+})
 app.get('/get', (req,res) =>{
     TodoModel.find()
     .then(result => res.json(result))
