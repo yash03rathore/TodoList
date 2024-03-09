@@ -8,7 +8,7 @@ app.use(cors(
     {
         origin: ["https://todo-list-frontend-mocha.vercel.app"],
         methods: ["POST", "GET", "PUT", "DELETE"],
-        credentials: true
+        credentials: true,
     }
 ));
 app.use(express.json())
