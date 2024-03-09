@@ -42,6 +42,6 @@ app.post('/add', (req, res) =>{
     }).then(result => res.json(result))
     .catch(err => res.json(err))
 })
-app.listen(3001, ()=>{
+app.listen("https://todo-list-frontend-mocha.vercel.app", ()=>{
     console.log("Server is Running")
 })
