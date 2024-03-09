@@ -8,19 +8,19 @@ import { BsCircleFill } from "react-icons/bs";
 function Home(){
 const [todos, setTodos] = useState([])
 useEffect(() => {
-    axios.get('https://todo-list-navy-nine.vercel.app/get')
+    axios.get('/get')
     .then(result => setTodos(result.data))
     .catch(err => console.log(err))
 }, [])
 
 const handleEdit = (id) =>{
-    axios.put('https://todo-list-navy-nine.vercel.app/update/'+id)
+    axios.put('/update/'+id)
     .then(result => {location.reload()})
     .catch(err => console.log(err))
 }
 
 const handleDelete = (id) =>{
-    axios.delete('https://todo-list-navy-nine.vercel.app/delete/'+id)
+    axios.delete('/delete/'+id)
     .then(result => {location.reload()})
     .catch(err => console.log(err))
 }
