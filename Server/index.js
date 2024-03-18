@@ -8,12 +8,12 @@ app.use(cors(
     {
         origin: ["https://todo-list-frontend-mocha.vercel.app"],
         methods: ["POST", "GET", "PUT", "DELETE"],
-        credentials: true
+        allowedHeaders: ['Content-Type'],
     }
 ));
 app.use(express.json())
 
-mongoose.connect('mongodb+srv://rathoreyash2003:batkagrip%40123@atlascluster.d0x5pb7.mongodb.net/test')
+mongoose.connect('mongodb+srv://rathoreyash2003:batkagrip%40123@atlascluster.d0x5pb7.mongodb.net/?retryWrites=true&w=majority&appName=AtlasCluster')
 
 app.get('/get', (req,res) =>{
     TodoModel.find()
